@@ -17,7 +17,7 @@ const server = http.createServer(app);
 // Inicializar Socket.IO y permitir CORS (ajusta el origin según tus necesidades)
 const io = socketIo(server, {
     cors: {
-        origin: "http://localhost:3000", // URL de tu front-end React
+        origin: "*", // Permite cualquier origen
         methods: ["GET", "POST"]
     }
 });
@@ -45,7 +45,7 @@ app.post('/updateTask', (req, res) => {
 });
 
 // Inicia el servidor en el puerto 5002 (o el que desees)
-const PORT = 5002;
+const PORT = process.env.PORT || 5002;
 server.listen(PORT, () => {
     console.log(`Servidor Socket.IO corriendo en http://localhost:${PORT}`);
 });
