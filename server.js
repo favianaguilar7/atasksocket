@@ -45,7 +45,7 @@ app.post('/updateTask', (req, res) => {
 });
 
 // Inicia el servidor en el puerto 5002 (o el que desees)
-const PORT = process.env.PORT || 5002;
+const PORT = 5002;
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor Socket.IO corriendo en http://0.0.0.0:${PORT}`);
 });
